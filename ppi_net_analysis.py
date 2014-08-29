@@ -9,6 +9,17 @@ ppi_net = nx.Graph()
 for row in ppi_csv:
     ppi_net.add_edge(row[0], row[2])
 
+attr_dict = {}
+#May just be easier to read a file as a readerDict using the 
+#gene as the key value and then passing that whole dictionary 
+#into the network
+for node in ppi_net.nodes():
+    attr_dict[node] = #some value mapped from 
+    
+
+
+
+
 
 def operable():
     '''
@@ -16,7 +27,8 @@ def operable():
     '''
 def cond_satified():
     '''
-    finds out if the attr matches the condition'''
+    finds out if the attr matches the condition
+    '''
 
 def subset_network(subset_edges):
     '''
@@ -42,9 +54,10 @@ def get_nodes_with_attr(graph, attr, condition, value):
             if cond_satified(attr, condition, value):
                 node_list.append(node)
     else:
-        warnings.warn("Incompatible condition and attr")
+        warnings.warn("Incompatible condition and attr. List has nothing.")
         
-        
+    return node_list
+
 def degree_greater_than(greater_degree):
     '''
     returns all nodes greater than greater_degree
